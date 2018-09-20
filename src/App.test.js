@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from "enzyme";
-import { shallow } from 'enzyme';
 import App from './App';
-import Header from './Header';
 import List from './List';
 
 describe("App", () => {
@@ -31,12 +29,12 @@ describe("App", () => {
 
   // All tests will go here
   it("always renders App", () => {
-    const divs = getApp().find(".App");
+    const divs = getApp().find("#App");
     expect(divs.length).toBeGreaterThan(0);
   });
 
-  it("always renders a `Header`", () => {
-    expect(getApp().find(Header).length).toBe(1);
+  it("always renders a header", () => {
+    expect(getApp().find(".app-header").length).toBe(1);
   });
 
   describe("Boolean", () => {
@@ -45,8 +43,8 @@ describe("App", () => {
         props.boolean = true;
       });
 
-      it("renders `.App-logo`", () => {
-        expect(getApp().find('.App-logo').length).toBe(1);
+      it("renders `.app-img`", () => {
+        expect(getApp().find('.app-img').length).toBe(1);
       });
     });
 
@@ -55,35 +53,8 @@ describe("App", () => {
         props.boolean = false;
       });
 
-      it("does not render `.App-logo`", () => {
-        expect(getApp().find('.App-logo').length).toBe(0);
-      });
-    });
-  });
-
-  describe("Text", () => {
-    describe("when `text` is defined", () => {
-      beforeEach(() => {
-        props.text = "Placeholder text";
-      });
-
-      it("renders `.App-intro`", () => {
-        expect(getApp().find('.App-intro').length).toBe(1);
-      });
-
-      it("passes `text` to the rendered `.App-intro` as `children`", () => {
-        const paragraph = getApp().find('.App-intro');
-        expect(paragraph.props().children).toBe(props.text);
-      });
-    });
-
-    describe("when `text` is NOT defined", () => {
-      beforeEach(() => {
-        props.text = undefined;
-      });
-
-      it("does not render `.App-intro`", () => {
-        expect(getApp().find('.App-intro').length).toBe(0);
+      it("does not render `.app-img`", () => {
+        expect(getApp().find('.app-img').length).toBe(0);
       });
     });
   });
@@ -117,6 +88,34 @@ describe("App", () => {
       });
     });
   });
+
+  describe("Text", () => {
+    describe("when `text` is defined", () => {
+      beforeEach(() => {
+        props.text = "Placeholder text";
+      });
+
+      it("renders `.app-heading`", () => {
+        expect(getApp().find('.app-heading').length).toBe(1);
+      });
+
+      it("passes `text` to the rendered `.app-heading` as `children`", () => {
+        const paragraph = getApp().find('.app-heading');
+        expect(paragraph.props().children).toBe(props.text);
+      });
+    });
+
+    describe("when `text` is NOT defined", () => {
+      beforeEach(() => {
+        props.text = undefined;
+      });
+
+      it("does not render `.app-heading`", () => {
+        expect(getApp().find('.app-heading').length).toBe(0);
+      });
+    });
+  });
+
 
   describe("Object", () => {
     describe("when `object` is defined", () => {

@@ -10,7 +10,7 @@ export default class List extends Component {
   }
   render() {
     return (
-      <ul>
+      <ul className={this.props.className}>
         {this.createList()}
       </ul>
     );

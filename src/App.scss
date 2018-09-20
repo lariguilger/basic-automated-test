@@ -1,0 +1,67 @@
+@import "./normalize";
+
+$text-color: #4b4c4c;
+
+body{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4b4c4c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: 0;
+  background-color: white;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+}
+.app-title{
+  font-size: 1.5em;
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.app-main{
+  padding: 0 70px;
+  .row-flex{
+    display: flex;
+  }
+}
+.app-heading{
+  text-align: center;
+  font-size: 3em;
+  font-weight: normal;
+}
+.app-list{
+  width: 100%;
+  list-style-type: none;
+  font-size: 1.2em;
+  li{
+    padding: 10px;
+    border-bottom: 1px rgba($text-color, 0.1) solid;
+  }
+}
+.card{
+  margin: auto;
+  text-align: center;
+  width: 500px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  border: 1px rgba($text-color, 0.2) solid;
+  border-radius: .3rem;
+  h2{
+    margin: 0;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #ddb349;
+    color: white;
+  }
+  p{
+    padding: 0 20px;
+  }
+}
